@@ -1,37 +1,45 @@
 $(function () {
-  'use strict'
+    'use strict'
 
-  feather.replace();
-  $(document).ready(function(){
-    $("#line-chart").trigger("click");
-  });
+    feather.replace();
+    $(document).ready(function(){
+        $("#stackedbar-chart").trigger("click");
+    });
 
-  $("#line-chart").click(function(){
-      $.getJSON( "src/datasets/samenleving-huwelijken.json", function( data ) {
-        //console.log(data [0]["Perioden"]);
-        //var dataset = JSON.parse(data);
-        //console.log(dataset);
-        var items = [];
-        $.each( data, function( key, val ) {
-            //console.log ("key"+key+" val"+val[0]);
-            //items.push( "<li id='" + key + "'>" + val + "</li>" );
-        })
-      }).fail(function(){
-        console.log("An error has occurred.");
-      });
-      setActive($(this));
-  });
-  $("#area-chart").click(function(){
-      setActive($(this));
-  });
-  $("#bar-chart").click(function(){
-      setActive($(this));
-  });
-  $("#pie-chart").click(function(){
-      setActive($(this));
-  });
-  function setActive(element){
-    $('.sidebar .active').removeClass('active');
-    $(element).addClass('active');
-  }
+    $("#line-chart").click(function(){
+        setActive($(this));
+        document.getElementById("secondChartDiv").style.display = 'block';
+        constructLineGraph();
+        constructLineGraph2();
+    });
+    $("#area-chart").click(function(){
+        setActive($(this));
+        document.getElementById("secondChartDiv").style.display = 'none';
+        constructAreaGraph();
+    });
+    $("#bar-chart").click(function(){
+        setActive($(this));
+        document.getElementById("secondChartDiv").style.display = 'block';
+        constructBarGraph();
+        constructBarGraph2();
+    });
+    $("#stackedbar-chart").click(function(){
+        setActive($(this));
+        document.getElementById("secondChartDiv").style.display = 'none';
+        constructStackedBarGraph();
+    });
+    function setActive(element){
+      if(($('#container').highcharts()) !== undefined){
+          $("#container").highcharts().destroy();
+      }
+      if(($('#container2').highcharts()) !== undefined){
+          $("#container2").highcharts().destroy();
+      }
+      $('.sidebar .active').removeClass('active');
+      $(element).addClass('active');
+      var width = (window.innerWidth > 0) ? window.innerWidth : screen.width;
+      if (width <= 767.98){
+          $('#sidebarMenu').collapse('hide');
+      }
+    }
 });

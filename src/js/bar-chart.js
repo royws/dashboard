@@ -1,27 +1,29 @@
-function constructLineGraph(){
-    var header = "Line chart gemaakt met Highcharts en JSON.";
+function constructBarGraph(){
+    var header = "Bar chart gemaakt met Highcharts en JSON.";
     var source = "Bron: https://www.cbs.nl/nl-nl/visualisaties/welvaart-in-coronatijd/samenleving";
 
     document.getElementById("headerOne").textContent = header;
     document.getElementById("sourceOne").textContent = source;
 
     var x_axis = [];
-    var x_series_2019 = [];
-    var x_series_2020 = [];
+    var x_series_one = [];
+    var x_series_two = [];
+    var x_series_three = [];
 
-    $.getJSON( "src/datasets/samenleving-huwelijken.json", function( data ) {
+    $.getJSON( "src/datasets/vertrouwen-participatie.json", function( data ) {
         for (var i=0,len=data.length;i<len;++i)
         {
-            x_axis.push(data[i]["Perioden"]);
-            x_series_2019.push(parseFloat(data[i]["2019 (x 1 000)"].replace(/,/,'.')));
-            x_series_2020.push(parseFloat(data[i]["2020* (x 1 000)"].replace(/,/,'.')));
+            x_axis.push(data[i]["Indicator"]);
+
+            x_series_one.push(parseFloat(data[i]["1e kwartaal 2020 (% personen van 15 jaar of ouder)"].replace(/,/,'.')));
+            x_series_two.push(parseFloat(data[i]["2e kwartaal 2020 (% personen van 15 jaar of ouder)"].replace(/,/,'.')));
+            x_series_three.push(parseFloat(data[i]["3e kwartaal 2020 (% personen van 15 jaar of ouder)"].replace(/,/,'.')));
         }
         plotChart();
     }).fail(function(){
         console.log("An error has occurred.");
     });
-
-    function plotChart(){
+    function plotChart() {
         Highcharts.setOptions({
             lang: {
                 decimalPoint: ','
@@ -29,38 +31,48 @@ function constructLineGraph(){
         });
         Highcharts.chart('container', {
             chart: {
-                animation: false,
-
-                events: {
-                    load: function() {
-                        this.renderer.globalAnimation = false;
-                    }
-                }
+                type: 'column'
             },
             title: {
-                text: 'Huwelijken'
+                text: 'Vertrouwen en Participatie',
+                margin: 20
             },
             xAxis: {
                 categories: x_axis
             },
             yAxis: {
+                min: 0,
                 title: {
+                    text: '% personen van 15 jaar of ouder',
                     align: 'high',
-                    offset: 0,
-                    text: 'x1 000',
                     rotation: 0,
-                    y: -20
+                    reserveSpace: false,
+                    y: -12,
+                    x: 190,
+                    style:{
+                        width:200
+                    }
                 },
-                tickInterval: 2.5
+                tickInterval: 20
             },
             data: {
                 decimalPoint: ','
             },
+            tooltip: {
+                headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+                pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
+                    '<td style="padding:0"><b>{point.y:.1f}</b></td></tr>',
+                footerFormat: '</table>',
+                shared: true,
+                followPointer: true,
+                useHTML: true
+            },
             plotOptions: {
+                column: {
+                    //pointPadding: 0.2,
+                    borderWidth: 0
+                },
                 series: {
-                    marker: {
-                        enabled: false
-                    },
                     states: {
                         inactive: {
                             opacity: 1
@@ -74,24 +86,18 @@ function constructLineGraph(){
                 verticalAlign: 'bottom'
             },
             series: [{
-                name: '2019',
-                data: x_series_2019,
+                name: '1e kwartaal 2020',
+                data: x_series_one,
+                color: '#00A1CD'
+            }, {
+                name: '2e kwartaal 2020',
+                data: x_series_two,
                 color: '#0058B8'
             }, {
-                name: '2020',
-                data: x_series_2020,
-                color: '#00A1CD'
+                name: '3e kwartaal 2020',
+                data: x_series_three,
+                color: '#AFCB05'
             }],
-
-            tooltip: {
-                shared: true
-            },
-
-            table: {
-                thousandsSep: ',',
-                decimalPoint: ','
-            },
-
             responsive: {
                 rules: [{
                     condition: {
@@ -108,11 +114,6 @@ function constructLineGraph(){
                                     return `<div style="${style}" title="${label}">${label}</div>`;
                                 }
                             }
-                        },
-                        legend: {
-                            layout: 'horizontal',
-                            align: 'left',
-                            verticalAlign: 'bottom'
                         }
                     }
                 }]
@@ -123,13 +124,8 @@ function constructLineGraph(){
                     decimalPoint:",",
                     columnHeaderFormatter: function(item, key) {
                         if (!item || item instanceof Highcharts.Axis) {
-                            return 'Perioden'
+                            return 'Indicator'
                         } else {
-                            if (item.name == "2019"){
-                                return '2019 (x 1 000)';
-                            }else if(item.name == "2020"){
-                                return '2020* (x 1 000)';
-                            }
                             return item.name;
                         }
                     }

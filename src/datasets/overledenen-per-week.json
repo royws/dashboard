@@ -1,0 +1,373 @@
+[
+  {
+    "Jaar": 2020,
+    "Id": 1,
+    "Overleden": 3104,
+    "Verwacht aantal overledenen": 3277,
+    "Verwacht aantal overledenen (95%-interval)": "2908 – 3645"
+  },
+  {
+    "Jaar": 2020,
+    "Id": 2,
+    "Overleden": 3366,
+    "Verwacht aantal overledenen": 3311,
+    "Verwacht aantal overledenen (95%-interval)": "2930 – 3692"
+  },
+  {
+    "Jaar": 2020,
+    "Id": 3,
+    "Overleden": 3157,
+    "Verwacht aantal overledenen": 3344,
+    "Verwacht aantal overledenen (95%-interval)": "2945 – 3742"
+  },
+  {
+    "Jaar": 2020,
+    "Id": 4,
+    "Overleden": 3046,
+    "Verwacht aantal overledenen": 3392,
+    "Verwacht aantal overledenen (95%-interval)": "3008 – 3776"
+  },
+  {
+    "Jaar": 2020,
+    "Id": 5,
+    "Overleden": 3163,
+    "Verwacht aantal overledenen": 3407,
+    "Verwacht aantal overledenen (95%-interval)": "3027 – 3788"
+  },
+  {
+    "Jaar": 2020,
+    "Id": 6,
+    "Overleden": 3194,
+    "Verwacht aantal overledenen": 3401,
+    "Verwacht aantal overledenen (95%-interval)": "2979 – 3823"
+  },
+  {
+    "Jaar": 2020,
+    "Id": 7,
+    "Overleden": 3199,
+    "Verwacht aantal overledenen": 3408,
+    "Verwacht aantal overledenen (95%-interval)": "2916 – 3901"
+  },
+  {
+    "Jaar": 2020,
+    "Id": 8,
+    "Overleden": 2959,
+    "Verwacht aantal overledenen": 3387,
+    "Verwacht aantal overledenen (95%-interval)": "2851 – 3922"
+  },
+  {
+    "Jaar": 2020,
+    "Id": 9,
+    "Overleden": 3098,
+    "Verwacht aantal overledenen": 3352,
+    "Verwacht aantal overledenen (95%-interval)": "2805 – 3898"
+  },
+  {
+    "Jaar": 2020,
+    "Id": 10,
+    "Overleden": 3106,
+    "Verwacht aantal overledenen": 3315,
+    "Verwacht aantal overledenen (95%-interval)": "2785 – 3845"
+  },
+  {
+    "Jaar": 2020,
+    "Id": 11,
+    "Overleden": 3219,
+    "Verwacht aantal overledenen": 3253,
+    "Verwacht aantal overledenen (95%-interval)": "2756 – 3751"
+  },
+  {
+    "Jaar": 2020,
+    "Id": 12,
+    "Overleden": 3615,
+    "Verwacht aantal overledenen": 3174,
+    "Verwacht aantal overledenen (95%-interval)": "2711 – 3637"
+  },
+  {
+    "Jaar": 2020,
+    "Id": 13,
+    "Overleden": 4459,
+    "Verwacht aantal overledenen": 3104,
+    "Verwacht aantal overledenen (95%-interval)": "2703 – 3505"
+  },
+  {
+    "Jaar": 2020,
+    "Id": 14,
+    "Overleden": 5085,
+    "Verwacht aantal overledenen": 3024,
+    "Verwacht aantal overledenen (95%-interval)": "2712 – 3337"
+  },
+  {
+    "Jaar": 2020,
+    "Id": 15,
+    "Overleden": 4981,
+    "Verwacht aantal overledenen": 2957,
+    "Verwacht aantal overledenen (95%-interval)": "2719 – 3195"
+  },
+  {
+    "Jaar": 2020,
+    "Id": 16,
+    "Overleden": 4307,
+    "Verwacht aantal overledenen": 2915,
+    "Verwacht aantal overledenen (95%-interval)": "2711 – 3120"
+  },
+  {
+    "Jaar": 2020,
+    "Id": 17,
+    "Overleden": 3907,
+    "Verwacht aantal overledenen": 2869,
+    "Verwacht aantal overledenen (95%-interval)": "2677 – 3060"
+  },
+  {
+    "Jaar": 2020,
+    "Id": 18,
+    "Overleden": 3379,
+    "Verwacht aantal overledenen": 2841,
+    "Verwacht aantal overledenen (95%-interval)": "2650 – 3032"
+  },
+  {
+    "Jaar": 2020,
+    "Id": 19,
+    "Overleden": 2986,
+    "Verwacht aantal overledenen": 2821,
+    "Verwacht aantal overledenen (95%-interval)": "2633 – 3009"
+  },
+  {
+    "Jaar": 2020,
+    "Id": 20,
+    "Overleden": 2777,
+    "Verwacht aantal overledenen": 2794,
+    "Verwacht aantal overledenen (95%-interval)": "2626 – 2962"
+  },
+  {
+    "Jaar": 2020,
+    "Id": 21,
+    "Overleden": 2771,
+    "Verwacht aantal overledenen": 2770,
+    "Verwacht aantal overledenen (95%-interval)": "2620 – 2920"
+  },
+  {
+    "Jaar": 2020,
+    "Id": 22,
+    "Overleden": 2729,
+    "Verwacht aantal overledenen": 2753,
+    "Verwacht aantal overledenen (95%-interval)": "2608 – 2898"
+  },
+  {
+    "Jaar": 2020,
+    "Id": 23,
+    "Overleden": 2682,
+    "Verwacht aantal overledenen": 2735,
+    "Verwacht aantal overledenen (95%-interval)": "2591 – 2880"
+  },
+  {
+    "Jaar": 2020,
+    "Id": 24,
+    "Overleden": 2692,
+    "Verwacht aantal overledenen": 2737,
+    "Verwacht aantal overledenen (95%-interval)": "2600 – 2875"
+  },
+  {
+    "Jaar": 2020,
+    "Id": 25,
+    "Overleden": 2695,
+    "Verwacht aantal overledenen": 2725,
+    "Verwacht aantal overledenen (95%-interval)": "2594 – 2855"
+  },
+  {
+    "Jaar": 2020,
+    "Id": 26,
+    "Overleden": 2661,
+    "Verwacht aantal overledenen": 2717,
+    "Verwacht aantal overledenen (95%-interval)": "2577 – 2857"
+  },
+  {
+    "Jaar": 2020,
+    "Id": 27,
+    "Overleden": 2639,
+    "Verwacht aantal overledenen": 2723,
+    "Verwacht aantal overledenen (95%-interval)": "2544 – 2902"
+  },
+  {
+    "Jaar": 2020,
+    "Id": 28,
+    "Overleden": 2619,
+    "Verwacht aantal overledenen": 2719,
+    "Verwacht aantal overledenen (95%-interval)": "2515 – 2923"
+  },
+  {
+    "Jaar": 2020,
+    "Id": 29,
+    "Overleden": 2528,
+    "Verwacht aantal overledenen": 2720,
+    "Verwacht aantal overledenen (95%-interval)": "2507 – 2934"
+  },
+  {
+    "Jaar": 2020,
+    "Id": 30,
+    "Overleden": 2673,
+    "Verwacht aantal overledenen": 2707,
+    "Verwacht aantal overledenen (95%-interval)": "2515 – 2900"
+  },
+  {
+    "Jaar": 2020,
+    "Id": 31,
+    "Overleden": 2668,
+    "Verwacht aantal overledenen": 2687,
+    "Verwacht aantal overledenen (95%-interval)": "2492 – 2882"
+  },
+  {
+    "Jaar": 2020,
+    "Id": 32,
+    "Overleden": 2640,
+    "Verwacht aantal overledenen": 2682,
+    "Verwacht aantal overledenen (95%-interval)": "2483 – 2881"
+  },
+  {
+    "Jaar": 2020,
+    "Id": 33,
+    "Overleden": 3209,
+    "Verwacht aantal overledenen": 2669,
+    "Verwacht aantal overledenen (95%-interval)": "2481 – 2857"
+  },
+  {
+    "Jaar": 2020,
+    "Id": 34,
+    "Overleden": 2855,
+    "Verwacht aantal overledenen": 2663,
+    "Verwacht aantal overledenen (95%-interval)": "2510 – 2815"
+  },
+  {
+    "Jaar": 2020,
+    "Id": 35,
+    "Overleden": 2733,
+    "Verwacht aantal overledenen": 2667,
+    "Verwacht aantal overledenen (95%-interval)": "2526 – 2807"
+  },
+  {
+    "Jaar": 2020,
+    "Id": 36,
+    "Overleden": 2690,
+    "Verwacht aantal overledenen": 2676,
+    "Verwacht aantal overledenen (95%-interval)": "2549 – 2804"
+  },
+  {
+    "Jaar": 2020,
+    "Id": 37,
+    "Overleden": 2739,
+    "Verwacht aantal overledenen": 2698,
+    "Verwacht aantal overledenen (95%-interval)": "2564 – 2832"
+  },
+  {
+    "Jaar": 2020,
+    "Id": 38,
+    "Overleden": 2720,
+    "Verwacht aantal overledenen": 2729,
+    "Verwacht aantal overledenen (95%-interval)": "2585 – 2873"
+  },
+  {
+    "Jaar": 2020,
+    "Id": 39,
+    "Overleden": 2892,
+    "Verwacht aantal overledenen": 2752,
+    "Verwacht aantal overledenen (95%-interval)": "2618 – 2886"
+  },
+  {
+    "Jaar": 2020,
+    "Id": 40,
+    "Overleden": 2998,
+    "Verwacht aantal overledenen": 2786,
+    "Verwacht aantal overledenen (95%-interval)": "2628 – 2943"
+  },
+  {
+    "Jaar": 2020,
+    "Id": 41,
+    "Overleden": 3020,
+    "Verwacht aantal overledenen": 2807,
+    "Verwacht aantal overledenen (95%-interval)": "2655 – 2960"
+  },
+  {
+    "Jaar": 2020,
+    "Id": 42,
+    "Overleden": 3220,
+    "Verwacht aantal overledenen": 2839,
+    "Verwacht aantal overledenen (95%-interval)": "2677 – 3001"
+  },
+  {
+    "Jaar": 2020,
+    "Id": 43,
+    "Overleden": 3449,
+    "Verwacht aantal overledenen": 2862,
+    "Verwacht aantal overledenen (95%-interval)": "2661 – 3063"
+  },
+  {
+    "Jaar": 2020,
+    "Id": 44,
+    "Overleden": 3679,
+    "Verwacht aantal overledenen": 2889,
+    "Verwacht aantal overledenen (95%-interval)": "2683 – 3095"
+  },
+  {
+    "Jaar": 2020,
+    "Id": 45,
+    "Overleden": 3589,
+    "Verwacht aantal overledenen": 2902,
+    "Verwacht aantal overledenen (95%-interval)": "2692 – 3111"
+  },
+  {
+    "Jaar": 2020,
+    "Id": 46,
+    "Overleden": 3575,
+    "Verwacht aantal overledenen": 2932,
+    "Verwacht aantal overledenen (95%-interval)": "2710 – 3155"
+  },
+  {
+    "Jaar": 2020,
+    "Id": 47,
+    "Overleden": 3329,
+    "Verwacht aantal overledenen": 2972,
+    "Verwacht aantal overledenen (95%-interval)": "2742 – 3202"
+  },
+  {
+    "Jaar": 2020,
+    "Id": 48,
+    "Overleden": 3401,
+    "Verwacht aantal overledenen": 3012,
+    "Verwacht aantal overledenen (95%-interval)": "2762 – 3263"
+  },
+  {
+    "Jaar": 2020,
+    "Id": 49,
+    "Overleden": 3519,
+    "Verwacht aantal overledenen": 3037,
+    "Verwacht aantal overledenen (95%-interval)": "2742 – 3332"
+  },
+  {
+    "Jaar": 2020,
+    "Id": 50,
+    "Overleden": 3606,
+    "Verwacht aantal overledenen": 3100,
+    "Verwacht aantal overledenen (95%-interval)": "2800 – 3399"
+  },
+  {
+    "Jaar": 2020,
+    "Id": 51,
+    "Overleden": 3896,
+    "Verwacht aantal overledenen": 3166,
+    "Verwacht aantal overledenen (95%-interval)": "2830 – 3501"
+  },
+  {
+    "Jaar": 2020,
+    "Id": 52,
+    "Overleden": 3849,
+    "Verwacht aantal overledenen": 3222,
+    "Verwacht aantal overledenen (95%-interval)": "2871 – 3573"
+  },
+  {
+    "Jaar": 2020,
+    "Id": 53,
+    "Overleden": 4082,
+    "Verwacht aantal overledenen": 3266,
+    "Verwacht aantal overledenen (95%-interval)": "2906 – 3625"
+  }
+]

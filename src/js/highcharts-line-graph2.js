@@ -1,23 +1,22 @@
-function constructLineGraph(){
-    var header = "Line chart gemaakt met Highcharts en JSON.";
+function constructLineGraph2() {
+    var header = "2de Line chart gemaakt met Highcharts en JSON.";
     var source = "Bron: https://www.cbs.nl/nl-nl/visualisaties/welvaart-in-coronatijd/samenleving";
 
-    document.getElementById("headerOne").textContent = header;
-    document.getElementById("sourceOne").textContent = source;
+    document.getElementById("headerTwo").textContent = header;
+    document.getElementById("sourceTwo").textContent = source;
 
     var x_axis = [];
     var x_series_2019 = [];
     var x_series_2020 = [];
 
-    $.getJSON( "src/datasets/samenleving-huwelijken.json", function( data ) {
-        for (var i=0,len=data.length;i<len;++i)
-        {
+    $.getJSON("src/datasets/geregistreerde-partnerschappen.json", function (data) {
+        for (var i = 0, len = data.length; i < len; ++i) {
             x_axis.push(data[i]["Perioden"]);
-            x_series_2019.push(parseFloat(data[i]["2019 (x 1 000)"].replace(/,/,'.')));
-            x_series_2020.push(parseFloat(data[i]["2020* (x 1 000)"].replace(/,/,'.')));
+            x_series_2019.push(parseFloat(data[i]["2019 (x 1 000)"].replace(/,/, '.')));
+            x_series_2020.push(parseFloat(data[i]["2020* (x 1 000)"].replace(/,/, '.')));
         }
         plotChart();
-    }).fail(function(){
+    }).fail(function () {
         console.log("An error has occurred.");
     });
 
@@ -27,7 +26,7 @@ function constructLineGraph(){
                 decimalPoint: ','
             }
         });
-        Highcharts.chart('container', {
+        Highcharts.chart('container2', {
             chart: {
                 animation: false,
 
@@ -38,12 +37,10 @@ function constructLineGraph(){
                 }
             },
             title: {
-                text: 'Huwelijken'
-            },
-            xAxis: {
-                categories: x_axis
+                text: 'Geregistreerde Partnerschappen'
             },
             yAxis: {
+                min: 0,
                 title: {
                     align: 'high',
                     offset: 0,
@@ -51,7 +48,11 @@ function constructLineGraph(){
                     rotation: 0,
                     y: -20
                 },
-                tickInterval: 2.5
+                tickInterval: 1
+            },
+
+            xAxis: {
+                categories: x_axis
             },
             data: {
                 decimalPoint: ','
@@ -60,11 +61,6 @@ function constructLineGraph(){
                 series: {
                     marker: {
                         enabled: false
-                    },
-                    states: {
-                        inactive: {
-                            opacity: 1
-                        }
                     }
                 }
             },
@@ -73,14 +69,15 @@ function constructLineGraph(){
                 align: 'left',
                 verticalAlign: 'bottom'
             },
+
             series: [{
                 name: '2019',
                 data: x_series_2019,
-                color: '#0058B8'
+                color: '#0058b8'
             }, {
                 name: '2020',
                 data: x_series_2020,
-                color: '#00A1CD'
+                color: '#0581a2'
             }],
 
             tooltip: {
