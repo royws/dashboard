@@ -157,7 +157,7 @@ function constructMap(){
             name: 'Inwonersaantal',
             states: {
                 hover: {
-                    color: '#BADA55'
+                    color: '#F39200'
                 }
             },
             dataLabels: {
