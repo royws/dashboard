@@ -62,7 +62,6 @@ function constructStackedBarGraph(){
                 itemWidth: 360
             },
             plotOptions: {
-
                 column: {
                 },
                 series: {

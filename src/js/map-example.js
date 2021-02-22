@@ -82,7 +82,7 @@ function constructMap(){
             map: 'countries/nl/nl-zh-all'
         },
         title: {
-            text: 'Inwoners per gemeente'
+            text: 'Inwoners per gemeente, 2020'
         },
         subtitle: {
             text: 'Source map: <a href="http://code.highcharts.com/mapdata/countries/nl/nl-zh-all.js">Zuid-Holland</a>'

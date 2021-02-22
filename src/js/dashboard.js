@@ -3,12 +3,11 @@ $(function () {
 
     feather.replace();
     $(document).ready(function(){
-        $("#map-example").trigger("click");
+        $("#line-chart").trigger("click");
     });
-
+    /* Handling for loading different charts */
     $("#line-chart").click(function(){
         setActive($(this));
-        document.getElementById("firstChartDiv").style.display = 'block';
         document.getElementById("secondChartDiv").style.display = 'block';
         document.getElementById("mapContainer").style.display = 'none';
         constructLineGraph();
@@ -16,14 +15,12 @@ $(function () {
     });
     $("#area-chart").click(function(){
         setActive($(this));
-        document.getElementById("firstChartDiv").style.display = 'block';
         document.getElementById("secondChartDiv").style.display = 'none';
         document.getElementById("mapContainer").style.display = 'none';
         constructAreaGraph();
     });
     $("#bar-chart").click(function(){
         setActive($(this));
-        document.getElementById("firstChartDiv").style.display = 'block';
         document.getElementById("secondChartDiv").style.display = 'block';
         document.getElementById("mapContainer").style.display = 'none';
         constructBarGraph();
@@ -31,7 +28,6 @@ $(function () {
     });
     $("#stackedbar-chart").click(function(){
         setActive($(this));
-        document.getElementById("firstChartDiv").style.display = 'block';
         document.getElementById("secondChartDiv").style.display = 'none';
         document.getElementById("mapContainer").style.display = 'none';
         constructStackedBarGraph();
@@ -39,18 +35,19 @@ $(function () {
     $("#map-example").click(function(){
         setActive($(this));
         document.getElementById("mapContainer").style.display = 'block';
-        document.getElementById("firstChartDiv").style.display = 'block';
         document.getElementById("secondChartDiv").style.display = 'none';
         constructMap();
     });
     function setActive(element)
     {
+        /* Remove open tables when switching to a different chart */
         var datatables = document.getElementsByClassName("highcharts-data-table");
         if (datatables.length > 0){
             for(var i=0; i<datatables.length; i++){
                 datatables[i].remove();
             }
         }
+        /* Destroy old charts before loading new one */
         if(($('#container').highcharts()) !== undefined){
             $("#container").highcharts().destroy();
         }
@@ -60,6 +57,7 @@ $(function () {
         if(($('#mapContainer').highcharts()) !== undefined){
             $("#mapContainer").highcharts().destroy();
         }
+        /* New Charts visual update */
         $('.sidebar .active').removeClass('active');
         $(element).addClass('active');
         var width = (window.innerWidth > 0) ? window.innerWidth : screen.width;

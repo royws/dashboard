@@ -33,7 +33,6 @@ function constructAreaGraph(){
         Highcharts.chart('container', {
             chart: {
                 animation: false,
-
                 events: {
                     load: function() {
                         this.renderer.globalAnimation = false;

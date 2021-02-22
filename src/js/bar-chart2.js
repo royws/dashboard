@@ -142,7 +142,7 @@ function constructBarGraph2(){
                 },
             },
         });
-        /* Override for exporting to CSV */
+        /* Override for exporting to CSV with correct decimalPoint */
         (function(H) {
             let pick = H.pick
             H.wrap(H.Chart.prototype, 'getCSV', function(p, useLocalDecimalPoint) {
