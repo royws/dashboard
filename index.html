@@ -6,7 +6,7 @@
     <meta name="description" content="">
     <meta name="author" content="Roy Wildeboer Schut">
     <meta name="generator" content="Hugo 0.80.0">
-    <title>Dashboard Example</title>
+    <title>Highcharts Dashboard</title>
 
     <!-- Bootstrap core CSS -->
     <link href="node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -17,7 +17,7 @@
   </head>
   <body>
     <header class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
-      <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3" href="#">CBS Sollicitatie Dashboard</a>
+      <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3" href="/">CBS Sollicitatie Dashboard</a>
       <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -52,24 +52,33 @@
                   Stacked bar chart
                 </a>
               </li>
+              <li class="nav-item">
+                <a class="nav-link" id="map-example" href="#">
+                  <span data-feather="map"></span>
+                  SVG map
+                </a>
+              </li>
             </ul>
           </div>
         </nav>
 
         <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
-          <div class="d-flex flex-column justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-            <div class="row">
-              <h4 id="headerOne" value=""></h4>
+          <div id="firstChartDiv">
+            <div class="d-flex flex-column justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+              <div class="row">
+                <h4 id="headerOne" value=""></h4>
+              </div>
+              <div class="row">
+                  <p class="wrapSource" id="sourceOne" value=""></p>
+              </div>
             </div>
-            <div class="row">
-                <p id="sourceOne" value=""></p>
-            </div>
-          </div>
 
-          <div class="border-bottom">
-            <figure class="highcharts-figure">
-              <div id="container"></div>
-            </figure>
+            <div class="border-bottom">
+              <figure class="highcharts-figure">
+                <div id="container"></div>
+              </figure>
+              <div id="mapContainer"></div>
+            </div>
           </div>
 
           <div id="secondChartDiv">
@@ -78,17 +87,16 @@
                 <h4 id="headerTwo" value=""></h4>
               </div>
               <div class="row">
-                <p id="sourceTwo" value=""></p>
+                <p class="wrapSource" id="sourceTwo" value=""></p>
               </div>
             </div>
-
             <div class="border-bottom">
               <figure class="highcharts-figure2">
                 <div id="container2"></div>
               </figure>
             </div>
-
           </div>
+
         </main>
       </div>
     </div>
@@ -96,18 +104,20 @@
     <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="src/js/feather.min.js"></script>
 
-    <script src="node_modules/highcharts/highcharts.js"></script>
+    <script src="node_modules/highcharts/highmaps.js"></script>
     <script src="node_modules/highcharts/highcharts-more.js"></script>
     <script src="node_modules/highcharts/modules/exporting.js"></script>
     <script src="node_modules/highcharts/modules/export-data.js"></script>
     <script src="node_modules/highcharts/modules/accessibility.js"></script>
 
+    <script src="src/js/nl-zh-all.js"></script>
     <script src="src/js/highcharts-line-graph.js"></script>
     <script src="src/js/highcharts-line-graph2.js"></script>
     <script src="src/js/bar-chart.js"></script>
     <script src="src/js/bar-chart2.js"></script>
     <script src="src/js/area-chart.js"></script>
     <script src="src/js/stacked-bar-chart.js"></script>
+    <script src="src/js/map-example.js"></script>
     <script src="src/js/dashboard.js"></script>
   </body>
 </html>

@@ -14,7 +14,6 @@ function constructBarGraph(){
         for (var i=0,len=data.length;i<len;++i)
         {
             x_axis.push(data[i]["Indicator"]);
-
             x_series_one.push(parseFloat(data[i]["1e kwartaal 2020 (% personen van 15 jaar of ouder)"].replace(/,/,'.')));
             x_series_two.push(parseFloat(data[i]["2e kwartaal 2020 (% personen van 15 jaar of ouder)"].replace(/,/,'.')));
             x_series_three.push(parseFloat(data[i]["3e kwartaal 2020 (% personen van 15 jaar of ouder)"].replace(/,/,'.')));
