@@ -19,7 +19,7 @@ https://github.com/royws/dashboard.git
 2. Install dependencies (in project directory)
 
 ```
-run npm install 
+npm install 
 ```
 
 3. Run a http-server to check a live version
