@@ -16,10 +16,10 @@ A step by step series of examples that tell you how to get a development env run
 https://github.com/royws/dashboard.git
 ```
 
-2. Install dependencies
+2. Install dependencies (in project directory)
 
 ```
-run npm install (in project directory)
+run npm install 
 ```
 
 3. Run a http-server to check a live version
