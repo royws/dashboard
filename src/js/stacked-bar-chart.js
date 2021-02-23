@@ -1,6 +1,6 @@
 function constructStackedBarGraph(){
-    var header = "Stacked Bar chart gemaakt met Highcharts en JSON.";
-    var source = "Bron: https://www.cbs.nl/nl-nl/visualisaties/welvaart-in-coronatijd/gezondheid-in-coronatijd";
+    let header = "Stacked Bar chart gemaakt met Highcharts en JSON.";
+    let source = "Bron: https://www.cbs.nl/nl-nl/visualisaties/welvaart-in-coronatijd/gezondheid-in-coronatijd";
 
     document.getElementById("headerOne").textContent = header;
     document.getElementById("sourceOne").textContent = source;
@@ -8,7 +8,7 @@ function constructStackedBarGraph(){
     var x_axis = [], x_series_one = [], x_series_two = [], x_series_three = [], x_series_four = [], x_series_five = [], x_series_six = [], x_series_seven = [];
 
     $.getJSON( "src/datasets/doodsoorzaken.json", function( data ) {
-        for (var i=0,len=data.length;i<len;++i)
+        for (let i=0,len=data.length;i<len;++i)
         {
             x_axis.push(data[i]["Maand"]);
             x_series_one.push(parseInt(data[i]["Nieuwvormingen (w.o. kanker) (overledenen)"]));

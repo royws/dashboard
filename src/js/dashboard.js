@@ -60,9 +60,50 @@ $(function () {
         /* New Charts visual update */
         $('.sidebar .active').removeClass('active');
         $(element).addClass('active');
-        var width = (window.innerWidth > 0) ? window.innerWidth : screen.width;
+        let width = (window.innerWidth > 0) ? window.innerWidth : screen.width;
         if (width <= 767.98){
             $('#sidebarMenu').collapse('hide');
         }
     }
+    /* Override for exporting to CSV with correct decimalPoint */
+    (function(H) {
+        let pick = H.pick
+        H.wrap(H.Chart.prototype, 'getCSV', function(p, useLocalDecimalPoint) {
+            var csv = '',
+                rows = this.getDataRows(),
+                csvOptions = this.options.exporting.csv,
+                decimalPoint = pick(csvOptions.decimalPoint, csvOptions.itemDelimiter !== ',' && useLocalDecimalPoint ?
+                    (1.1).toLocaleString()[1] :
+                    '.'),
+                // use ';' for direct to Excel
+                itemDelimiter = pick(csvOptions.itemDelimiter, decimalPoint === ',' ? ';' : ','),
+                // '\n' isn't working with the js csv data extraction
+                lineDelimiter = csvOptions.lineDelimiter;
+            // Transform the rows to CSV
+            rows.forEach(function(row, i) {
+                var val = '',
+                    j = row.length +1 ;
+                while (j--) {
+                    val = row[j];
+                    if (typeof val === 'string') {
+                        val = '"' + val + '"';
+                    }
+                    if (typeof val === 'number') {
+                        val = '"' + val + '"';
+                        if (decimalPoint !== '.') {
+                            val = val.toString().replace('.', decimalPoint);
+                        }
+                    }
+                    row[j] = val;
+                }
+                // Add the values
+                csv += row.join(itemDelimiter);
+                // Add the line delimiter
+                if (i < rows.length - 1) {
+                    csv += lineDelimiter;
+                }
+            });
+            return csv;
+        });
+    }(Highcharts));
 });

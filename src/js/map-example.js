@@ -1,11 +1,11 @@
 function constructMap(){
-    var header = "Interactieve map gemaakt met Highcharts Maps";
-    var source = "Databron: https://www.cbs.nl/nl-nl/visualisaties/dashboard-bevolking/regionaal/inwoners";
+    let header = "Interactieve map gemaakt met Highcharts Maps";
+    let source = "Databron: https://www.cbs.nl/nl-nl/visualisaties/dashboard-bevolking/regionaal/inwoners";
 
     document.getElementById("headerOne").textContent = header;
     document.getElementById("sourceOne").textContent = source;
 
-    var data = [
+    let data = [
         ['nl-3560-gm0627', 29291],//Waddinxveen
         ['nl-3560-gm1672', 18577],//Rijnwoude
         ['nl-3560-gm1924', 50049],//Goeree-Overflakkee
@@ -163,6 +163,17 @@ function constructMap(){
             dataLabels: {
                 format: '{point.name}'
             }
-        }]
+        }],
+        exporting: {
+            csv: {
+                columnHeaderFormatter: function(item, key) {
+                    if (!item || item instanceof Highcharts.Axis) {
+                        return 'Gemeente'
+                    } else {
+                        return item.name;
+                    }
+                }
+            },
+        }
     });
 }

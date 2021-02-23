@@ -1,17 +1,17 @@
 function constructBarGraph(){
-    var header = "Bar chart gemaakt met Highcharts en JSON.";
-    var source = "Bron: https://www.cbs.nl/nl-nl/visualisaties/welvaart-in-coronatijd/samenleving";
+    let header = "Bar chart gemaakt met Highcharts en JSON.";
+    let source = "Bron: https://www.cbs.nl/nl-nl/visualisaties/welvaart-in-coronatijd/samenleving";
 
     document.getElementById("headerOne").textContent = header;
     document.getElementById("sourceOne").textContent = source;
 
-    var x_axis = [];
-    var x_series_one = [];
-    var x_series_two = [];
-    var x_series_three = [];
+    let x_axis = [];
+    let x_series_one = [];
+    let x_series_two = [];
+    let x_series_three = [];
 
     $.getJSON( "src/datasets/vertrouwen-participatie.json", function( data ) {
-        for (var i=0,len=data.length;i<len;++i)
+        for (let i=0,len=data.length;i<len;++i)
         {
             x_axis.push(data[i]["Indicator"]);
             x_series_one.push(parseFloat(data[i]["1e kwartaal 2020 (% personen van 15 jaar of ouder)"].replace(/,/,'.')));
@@ -131,46 +131,5 @@ function constructBarGraph(){
                 },
             },
         });
-        /* Override for exporting to CSV with correct decimalPoint */
-        (function(H) {
-            let pick = H.pick
-            H.wrap(H.Chart.prototype, 'getCSV', function(p, useLocalDecimalPoint) {
-                var csv = '',
-                    rows = this.getDataRows(),
-                    csvOptions = this.options.exporting.csv,
-                    decimalPoint = pick(csvOptions.decimalPoint, csvOptions.itemDelimiter !== ',' && useLocalDecimalPoint ?
-                        (1.1).toLocaleString()[1] :
-                        '.'),
-                    // use ';' for direct to Excel
-                    itemDelimiter = pick(csvOptions.itemDelimiter, decimalPoint === ',' ? ';' : ','),
-                    // '\n' isn't working with the js csv data extraction
-                    lineDelimiter = csvOptions.lineDelimiter;
-                // Transform the rows to CSV
-                rows.forEach(function(row, i) {
-                    var val = '',
-                        j = row.length +1 ;
-                    while (j--) {
-                        val = row[j];
-                        if (typeof val === 'string') {
-                            val = '"' + val + '"';
-                        }
-                        if (typeof val === 'number') {
-                            val = '"' + val + '"';
-                            if (decimalPoint !== '.') {
-                                val = val.toString().replace('.', decimalPoint);
-                            }
-                        }
-                        row[j] = val;
-                    }
-                    // Add the values
-                    csv += row.join(itemDelimiter);
-                    // Add the line delimiter
-                    if (i < rows.length - 1) {
-                        csv += lineDelimiter;
-                    }
-                });
-                return csv;
-            });
-        }(Highcharts));
     }
 }

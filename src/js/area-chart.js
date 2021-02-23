@@ -1,22 +1,22 @@
 function constructAreaGraph(){
-    var header = "Area chart gemaakt met Highcharts en JSON.";
-    var source = "Bron: https://www.cbs.nl/nl-nl/visualisaties/welvaart-in-coronatijd/gezondheid-in-coronatijd";
+    let header = "Area chart gemaakt met Highcharts en JSON.";
+    let source = "Bron: https://www.cbs.nl/nl-nl/visualisaties/welvaart-in-coronatijd/gezondheid-in-coronatijd";
 
     document.getElementById("headerOne").textContent = header;
     document.getElementById("sourceOne").textContent = source;
 
-    var x_series_overleden = [];
-    var x_series_verwacht = [];
-    var x_series_interval = [];
+    let x_series_overleden = [];
+    let x_series_verwacht = [];
+    let x_series_interval = [];
 
     $.getJSON( "src/datasets/overledenen-per-week.json", function( data ) {
-        for (var i=0,len=data.length;i<len;++i)
+        for (let i=0,len=data.length;i<len;++i)
         {
             x_series_overleden.push(data[i]["Overleden"]);
             x_series_verwacht.push(data[i]["Verwacht aantal overledenen"]);
 
-            var splitInterval = data[i]["Verwacht aantal overledenen (95%-interval)"].split("–");
-            var interval = [parseInt(splitInterval[0]),parseInt(splitInterval[1])];
+            let splitInterval = data[i]["Verwacht aantal overledenen (95%-interval)"].split("–");
+            let interval = [parseInt(splitInterval[0]),parseInt(splitInterval[1])];
             x_series_interval.push(interval);
         }
         plotChart();
